@@ -1,0 +1,761 @@
+/* =========================================
+   ECHOES TIMELINE
+========================================= */
+
+
+.timeline-page {
+
+    width: min(1000px, 90%);
+
+    margin: auto;
+
+    padding: 70px 0;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.timeline-header {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 80px;
+
+}
+
+
+.timeline-header h1 {
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    line-height: 1.1;
+
+    margin: 20px 0;
+
+}
+
+
+.timeline-header h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #22d3ee,
+            #818cf8,
+            #8b5cf6
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.timeline-header p {
+
+    color: #94a3b8;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   TIMELINE LINE
+========================================= */
+
+.timeline {
+
+    position: relative;
+
+    padding: 20px 0 50px;
+
+}
+
+
+/* Vertical line */
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #22d3ee,
+            #8b5cf6,
+            transparent
+        );
+
+}
+
+
+/* =========================================
+   TIMELINE ITEM
+========================================= */
+
+.timeline-item {
+
+    position: relative;
+
+    width: 50%;
+
+    padding: 20px 45px;
+
+    margin-bottom: 40px;
+
+}
+
+
+/* LEFT */
+
+.timeline-item:nth-child(odd) {
+
+    left: 0;
+
+    text-align: right;
+
+}
+
+
+/* RIGHT */
+
+.timeline-item:nth-child(even) {
+
+    left: 50%;
+
+}
+
+
+/* =========================================
+   TIMELINE DOT
+========================================= */
+
+.timeline-dot {
+
+    position: absolute;
+
+    top: 35px;
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22d3ee,
+            #8b5cf6
+        );
+
+    border: 5px solid #070b1a;
+
+    font-size: 20px;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 25px
+        rgba(34,211,238,.35);
+
+}
+
+
+/* LEFT DOT */
+
+.timeline-item:nth-child(odd)
+.timeline-dot {
+
+    right: -26px;
+
+}
+
+
+/* RIGHT DOT */
+
+.timeline-item:nth-child(even)
+.timeline-dot {
+
+    left: -26px;
+
+}
+
+
+/* =========================================
+   TIMELINE CARD
+========================================= */
+
+.timeline-card {
+
+    padding: 30px;
+
+    text-align: left;
+
+    position: relative;
+
+}
+
+
+.timeline-item:nth-child(odd)
+.timeline-card {
+
+    text-align: left;
+
+}
+
+
+/* =========================================
+   YEAR
+========================================= */
+
+.timeline-year {
+
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(34,211,238,.10);
+
+    border:
+        1px solid
+        rgba(34,211,238,.18);
+
+    color: #22d3ee;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.timeline-card h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.timeline-card p {
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.timeline-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+}
+
+
+.timeline-tags span {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color: #cbd5e1;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.timeline-card:hover {
+
+    border-color:
+        rgba(34,211,238,.3);
+
+    box-shadow:
+        0 20px 60px
+        rgba(34,211,238,.10);
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+
+    .timeline {
+
+        padding-left: 20px;
+
+    }
+
+
+    .timeline::before {
+
+        left: 20px;
+
+    }
+
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+
+        width: 100%;
+
+        left: 0;
+
+        padding-left: 65px;
+
+        padding-right: 0;
+
+        text-align: left;
+
+    }
+
+
+    .timeline-item:nth-child(odd)
+    .timeline-card {
+
+        text-align: left;
+
+    }
+
+
+    .timeline-item:nth-child(odd)
+    .timeline-dot,
+    .timeline-item:nth-child(even)
+    .timeline-dot {
+
+        left: -6px;
+
+        right: auto;
+
+    }
+
+
+    .timeline-header {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .timeline-header h1 {
+
+        font-size: 42px;
+
+    }
+
+}
+/* =========================================
+   YEAR FILTER
+========================================= */
+
+.year-filter {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 60px;
+
+}
+
+
+.year-btn {
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: rgba(255,255,255,.05);
+
+    color: #94a3b8;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: .3s ease;
+
+}
+
+
+.year-btn:hover {
+
+    color: white;
+
+    border-color: #22d3ee;
+
+}
+
+
+.year-btn.active {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22d3ee,
+            #6366f1
+        );
+
+    border-color: transparent;
+
+    box-shadow:
+        0 8px 25px
+        rgba(34,211,238,.2);
+
+}
+
+
+/* =========================================
+   MEMORY BUTTON
+========================================= */
+
+.view-memory {
+
+    margin-top: 22px;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    border: 1px solid
+        rgba(34,211,238,.2);
+
+    background:
+        rgba(34,211,238,.07);
+
+    color: #22d3ee;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+
+}
+
+
+.view-memory:hover {
+
+    background:
+        rgba(34,211,238,.15);
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================
+   MEMORY PANEL
+========================================= */
+
+.memory-panel {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height .6s ease,
+        opacity .4s ease;
+
+}
+
+
+.memory-panel.open {
+
+    max-height: 1000px;
+
+    opacity: 1;
+
+    margin-top: 25px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+/* =========================================
+   MEMORY GRID
+========================================= */
+
+.memory-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.memory {
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    transition: .3s ease;
+
+}
+
+
+.memory:hover {
+
+    transform: translateY(-5px);
+
+    background:
+        rgba(255,255,255,.07);
+
+}
+
+
+.memory-image {
+
+    height: 110px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,211,238,.12),
+            rgba(139,92,246,.15)
+        );
+
+    font-size: 40px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.memory h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.memory p {
+
+    font-size: 11px;
+
+    color: #94a3b8;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   FILTERED TIMELINE
+========================================= */
+
+.timeline-item.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .memory-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .year-filter {
+
+        margin-bottom: 40px;
+
+    }
+
+}
+/* =========================================
+   UPLOADED MEMORY
+========================================= */
+
+.uploaded-memory-image {
+
+    width: 100%;
+
+    max-height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    margin: 18px 0;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    display: block;
+
+}
+
+
+.memory-author {
+
+    color: #22d3ee !important;
+
+    font-size: 13px !important;
+
+}
+
+
+.memory-author strong {
+
+    color: white;
+
+}
+
+
+.memory-date {
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+}
+
+
+.uploaded-memory {
+
+    animation:
+        memoryAppear .6s ease;
+
+}
+
+
+@keyframes memoryAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}

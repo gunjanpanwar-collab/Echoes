@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Memory | ECHOES</title>
+
+    <link rel="stylesheet" href="..\css\theme.css">
+    <link rel="stylesheet" href="..\css\upload.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+
+</head>
+
+<body>
+<div class="circle one"></div>
+<div class="circle two"></div>
+<div class="circle three"></div>
+
+<!-- Navigation -->
+
+<nav>
+
+<div class="logo">
+
+🏫 ECHOES
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="upload.html">Upload</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="timeline.html">Timeline</a></li>
+
+<li><a href="achievements.html">Achievements</a></li>
+
+</ul>
+
+</nav>
+
+<!-- Upload Container -->
+
+<section class="upload-section">
+
+<div class="upload-card">
+
+<h1>📸 Upload a Memory</h1>
+
+<p>Share your unforgettable college moments.</p>
+
+<section class="upload-page">
+
+    <div class="upload-header">
+
+        <div class="home-badge">
+            📸 SHARE YOUR ECHO
+        </div>
+
+        <h1>
+            Share a
+            <span>Memory</span>
+        </h1>
+
+        <p>
+            Add a moment that you want your college
+            community to remember.
+        </p>
+
+    </div>
+
+
+    <div class="glass-card upload-app-card">
+
+        <form id="memoryForm">
+
+            <!-- MEMORY TITLE -->
+
+            <div class="form-group">
+
+                <label for="memoryTitle">
+                    Memory Title
+                </label>
+
+                <input
+                    type="text"
+                    id="memoryTitle"
+                    class="echoes-input"
+                    placeholder="e.g. Freshers Night 2026"
+                    required>
+
+            </div>
+
+
+            <!-- STUDENT NAME -->
+
+            <div class="form-group">
+
+                <label for="studentName">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    class="echoes-input"
+                    placeholder="Enter your name"
+                    required>
+
+            </div>
+
+
+            <!-- YEAR -->
+
+            <div class="form-group">
+
+                <label for="memoryYear">
+                    Year
+                </label>
+
+                <select
+                    id="memoryYear"
+                    class="echoes-input"
+                    required>
+
+                    <option value="">
+                        Select year
+                    </option>
+
+                    <option value="2026">
+                        2026
+                    </option>
+
+                    <option value="2025">
+                        2025
+                    </option>
+
+                    <option value="2024">
+                        2024
+                    </option>
+
+                    <option value="2023">
+                        2023
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="memoryCategory">
+                    Category
+                </label>
+
+                <select
+                    id="memoryCategory"
+                    class="echoes-input"
+                    required>
+
+                    <option value="">
+                        Choose category
+                    </option>
+
+                    <option value="College Life">
+                        🎓 College Life
+                    </option>
+
+                    <option value="Event">
+                        🎉 Event
+                    </option>
+
+                    <option value="Achievement">
+                        🏆 Achievement
+                    </option>
+
+                    <option value="Friends">
+                        ❤️ Friends
+                    </option>
+
+                    <option value="Sports">
+                        ⚽ Sports
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group">
+
+                <label for="memoryDescription">
+                    Your Memory
+                </label>
+
+                <textarea
+                    id="memoryDescription"
+                    class="echoes-textarea"
+                    placeholder="Tell us what happened..."
+                    rows="5"
+                    required></textarea>
+
+            </div>
+
+
+            <!-- IMAGE -->
+
+            <div class="form-group">
+
+                <label for="memoryImage">
+                    Add a Photo
+                </label>
+
+                <input
+                    type="file"
+                    id="memoryImage"
+                    accept="image/*"
+                    class="echoes-file">
+
+            </div>
+
+
+            <!-- IMAGE PREVIEW -->
+
+            <div
+                id="imagePreview"
+                class="image-preview">
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="echoes-btn">
+
+                ✨ Add Memory to ECHOES
+
+            </button>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                id="uploadMessage"
+                class="upload-message">
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+<div id="successMessage">
+
+✅ Memory Uploaded Successfully!
+
+</div>
+
+</div>
+
+</section>
+
+<script src="..\js\upload.js"></script>
+
+</body>
+
+</html>

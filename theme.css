@@ -1,0 +1,1128 @@
+/* =====================================================
+   ECHOES — SHARED APP THEME
+   Digital Yearbook
+===================================================== */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #070b1a;
+    color: #f8fafc;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ---------- BACKGROUND ---------- */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: -180px;
+    left: -150px;
+
+    background: #2563eb;
+    opacity: 0.18;
+    filter: blur(120px);
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    right: -150px;
+    bottom: -150px;
+
+    background: #9333ea;
+    opacity: 0.15;
+    filter: blur(120px);
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+
+/* ---------- VARIABLES ---------- */
+
+:root {
+
+    --bg: #070b1a;
+
+    --card: rgba(255, 255, 255, 0.065);
+
+    --card-hover: rgba(255, 255, 255, 0.10);
+
+    --border: rgba(255, 255, 255, 0.10);
+
+    --cyan: #22d3ee;
+
+    --blue: #3b82f6;
+
+    --violet: #8b5cf6;
+
+    --text: #f8fafc;
+
+    --muted: #94a3b8;
+
+    --danger: #fb7185;
+
+    --radius: 22px;
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.30);
+}
+
+
+/* ---------- GLOBAL LINKS ---------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ---------- APP NAVBAR ---------- */
+
+.echoes-nav {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: rgba(7, 11, 26, 0.78);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* ---------- LOGO ---------- */
+
+.echoes-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.echoes-logo span {
+
+    color: var(--cyan);
+
+}
+
+
+/* ---------- NAV LINKS ---------- */
+
+.echoes-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    list-style: none;
+}
+
+.echoes-links a {
+
+    position: relative;
+
+    padding: 10px 15px;
+
+    border-radius: 12px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.echoes-links a:hover {
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.echoes-links a.active {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 211, 238, 0.15),
+            rgba(139, 92, 246, 0.15)
+        );
+
+    border: 1px solid rgba(34, 211, 238, 0.15);
+}
+
+
+/* ---------- PROFILE BUTTON ---------- */
+
+.echoes-profile {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--violet)
+        );
+
+    font-weight: 700;
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.20);
+}
+
+
+/* =====================================================
+   COMMON APP CONTAINER
+===================================================== */
+
+.app-container {
+
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    padding: 50px 0;
+}
+
+
+/* ---------- GLASS CARD ---------- */
+
+.glass-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: var(--shadow);
+
+    transition: 0.35s ease;
+}
+
+.glass-card:hover {
+
+    background: var(--card-hover);
+
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(34, 211, 238, 0.20);
+}
+
+
+/* ---------- SECTION TITLE ---------- */
+
+.section-title {
+
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 6px;
+}
+
+.section-title p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.echoes-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    padding: 13px 21px;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    color: white;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(34, 211, 238, 0.15);
+
+    transition: 0.3s ease;
+}
+
+.echoes-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(34, 211, 238, 0.25);
+}
+
+.echoes-btn.secondary {
+
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid var(--border);
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   HOME PAGE
+===================================================== */
+
+.home-hero {
+
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.home-hero-content {
+
+    max-width: 760px;
+
+    padding: 80px 5%;
+}
+
+.home-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    color: var(--cyan);
+
+    background: rgba(34, 211, 238, 0.08);
+
+    border: 1px solid rgba(34, 211, 238, 0.15);
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.home-hero h1 {
+
+    font-size: clamp(45px, 7vw, 82px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.home-hero h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            #818cf8,
+            var(--violet)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+.home-hero p {
+
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ---------- HOME FEATURE GRID ---------- */
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 50px;
+}
+
+.feature-card {
+
+    padding: 28px;
+
+    min-height: 200px;
+}
+
+.feature-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,211,238,.18),
+            rgba(139,92,246,.18)
+        );
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   UPLOAD PAGE
+===================================================== */
+
+.upload-page {
+
+    width: min(900px, 92%);
+
+    margin: auto;
+
+    padding: 60px 0;
+}
+
+.upload-header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.upload-header h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.upload-header p {
+
+    color: var(--muted);
+}
+
+
+/* ---------- UPLOAD CARD ---------- */
+
+.upload-app-card {
+
+    padding: 40px;
+}
+
+
+/* ---------- INPUTS ---------- */
+
+.echoes-input,
+.echoes-textarea,
+.echoes-select {
+
+    width: 100%;
+
+    padding: 15px 17px;
+
+    border-radius: 13px;
+
+    border: 1px solid var(--border);
+
+    outline: none;
+
+    color: white;
+
+    background: rgba(0,0,0,0.18);
+
+    font-family: inherit;
+
+    transition: 0.3s ease;
+}
+
+.echoes-input:focus,
+.echoes-textarea:focus,
+.echoes-select:focus {
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 0 3px rgba(34,211,238,.08);
+}
+
+.echoes-textarea {
+
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+.input-group {
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #cbd5e1;
+}
+
+
+/* ---------- DROP ZONE ---------- */
+
+.echoes-dropzone {
+
+    border: 2px dashed rgba(34,211,238,.35);
+
+    border-radius: 20px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,211,238,.04),
+            rgba(139,92,246,.04)
+        );
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+}
+
+.echoes-dropzone:hover,
+.echoes-dropzone.dragging {
+
+    border-color: var(--cyan);
+
+    background:
+        rgba(34,211,238,.08);
+
+    box-shadow:
+        0 0 35px rgba(34,211,238,.08);
+}
+
+.drop-icon {
+
+    font-size: 48px;
+
+    margin-bottom: 12px;
+}
+
+.echoes-dropzone h3 {
+
+    margin-bottom: 7px;
+}
+
+.echoes-dropzone p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   ACHIEVEMENTS PAGE
+===================================================== */
+
+.achievements-page {
+
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    padding: 50px 0;
+}
+
+.achievement-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+.achievement-header h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 8px;
+}
+
+.achievement-header p {
+
+    color: var(--muted);
+}
+
+
+/* ---------- STAT CARDS ---------- */
+
+.achievement-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.stat-card {
+
+    padding: 23px;
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(34,211,238,.25);
+}
+
+.stat-card .stat-icon {
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+.stat-card h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 3px;
+}
+
+.stat-card p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.achievement-toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.achievement-search {
+
+    flex: 1;
+
+    position: relative;
+}
+
+.achievement-search input {
+
+    width: 100%;
+
+    padding: 15px 20px 15px 45px;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    color: white;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.achievement-search input:focus {
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 0 3px rgba(34,211,238,.07);
+}
+
+
+/* ---------- CATEGORY FILTERS ---------- */
+
+.category-filters {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.category-filters button {
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.04);
+
+    color: var(--muted);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.category-filters button:hover,
+.category-filters button.active {
+
+    color: white;
+
+    background:
+        rgba(34,211,238,.12);
+
+    border-color:
+        rgba(34,211,238,.25);
+}
+
+
+/* ---------- ACHIEVEMENT GRID ---------- */
+
+.achievement-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ---------- ACHIEVEMENT CARD ---------- */
+
+.achievement-card {
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(15px);
+
+    transition: .35s ease;
+}
+
+.achievement-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(34,211,238,.22);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+.achievement-image {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.achievement-content {
+
+    padding: 22px;
+}
+
+.achievement-category {
+
+    display: inline-block;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    color: var(--cyan);
+
+    background: rgba(34,211,238,.08);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 13px;
+}
+
+.achievement-card h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+.achievement-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.achievement-meta {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+
+    animation:
+        fadeUp .7s ease forwards;
+}
+
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #070b1a;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #1e3a5f;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #2563eb;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .echoes-links {
+
+        display: none;
+    }
+
+    .feature-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .achievement-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .achievement-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .echoes-nav {
+
+        padding: 0 20px;
+    }
+
+    .home-hero-content {
+
+        padding: 60px 20px;
+    }
+
+    .home-hero h1 {
+
+        font-size: 46px;
+
+        letter-spacing: -2px;
+    }
+
+    .feature-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-stats {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .achievement-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-header {
+
+        display: block;
+    }
+
+    .achievement-header h1 {
+
+        font-size: 34px;
+    }
+
+    .achievement-toolbar {
+
+        display: block;
+    }
+
+    .category-filters {
+
+        margin-top: 12px;
+    }
+
+    .upload-app-card {
+
+        padding: 22px;
+    }
+
+}
